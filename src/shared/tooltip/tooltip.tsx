@@ -5,11 +5,11 @@ import './tooltip.css';
 type PropsTooltip = {
   children: ReactElement;
   text: string;
-  position?: 'top' | 'bottom' | 'left' | 'right' | undefined;
-  displayTime?: number;
+  position: 'top' | 'bottom' | 'left' | 'right';
+  displayTime: number;
 };
 
-export const ToolTip: React.FC<PropsTooltip> = ({ children, text, position = 'top', displayTime = 500 }) => {
+export const ToolTip: React.FC<PropsTooltip> = ({ children, text, position, displayTime }) => {
   const refSetTimeout = useRef<NodeJS.Timeout>();
   const [isVisible, setIsVisible] = useState(false);
 
